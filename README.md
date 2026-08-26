@@ -1,6 +1,6 @@
 # 🧭 Skill Router — Plugin OpenClaw
 
-![Skill Router banner](assets/banner.svg)
+![Skill Router banner](assets/banner.png)
 
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-plugin-6d5efc)](https://clawhub.ai)
 [![License](https://img.shields.io/badge/license-free%20to%20use-brightgreen)](LICENSE)

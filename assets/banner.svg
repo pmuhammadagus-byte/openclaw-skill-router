@@ -87,6 +87,6 @@
 
   <!-- footer -->
   <text x="36" y="430" fill="#94a3b8" font-size="15" font-weight="700">Perfect for: large skill libraries, teams sharing skills, or anyone tired of searching manually.</text>
-  <text x="36" y="456" fill="#64748b" font-size="11">OpenClaw plugin · generic & reusable · fork it, star it, make it yours</text>
+  <text x="36" y="456" fill="#64748b" font-size="11">OpenClaw plugin · generic &amp; reusable · fork it, star it, make it yours</text>
   <text x="36" y="476" fill="#64748b" font-size="11">Plug in your own skills.json and the router serves YOUR catalog.</text>
 </svg>
