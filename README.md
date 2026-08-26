@@ -1,40 +1,33 @@
-# 🧭 Skill Router — Plugin OpenClaw
+<div align="center">
+
+# 🧭 Skill Router
+
+**Route any task to the best skill in YOUR catalog — automatically.**
+
+[![OpenClaw](https://img.shields.io/badge/OpenClaw-plugin-6d5efc)](https://clawhub.ai)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Status](https://img.shields.io/badge/status-pending%20publish-orange)](https://clawhub.ai)
+[![Made with Clara](https://img.shields.io/badge/made%20with-Clara-ff69b4)](https://github.com/pmuhammadagus-byte)
 
 ![Skill Router banner](assets/banner.png)
 
-[![OpenClaw](https://img.shields.io/badge/OpenClaw-plugin-6d5efc)](https://clawhub.ai)
-[![License](https://img.shields.io/badge/license-free%20to%20use-brightgreen)](LICENSE)
-[![Status](https://img.shields.io/badge/status-pending%20publish-orange)](https://clawhub.ai)
+</div>
+
+---
 
 > **"Lo punya banyak skill di ClawHub… tapi tiap kali ngerjain sesuatu, skill mana yang harus dipakai?"**
+>
+> Skill Router menjawab itu. Kasih dia deskripsi tugas, dia balikin **skill terbaik dari katalog lo** lengkap dengan alasan + link ClawHub. Gak perlu ingat nama skill satu-satu.
 
-Skill Router menjawab itu. Kasih dia deskripsi tugas, dia balikin **skill terbaik dari katalog lo** lengkap dengan alasan + link ClawHub. Gak perlu ingat nama skill satu-satu.
+## ✨ Why this is useful
 
----
-
-## 🍴 Kenapa fork repo ini?
-
-Repo ini **publik & bebas di-fork**. Justru tujuannya: biar orang lain bisa lihat, fork, dan pakai router ini buat **katalog skill mereka sendiri**.
-
-- 🔌 **Plug-and-play**: ganti `skills.json` dengan daftar skill kamu → router langsung nyambung ke katalog kamu.
-- 🧩 **Generic**: gak ngunci ke skill tertentu; ini cuma mesin routing lokal.
-- 📚 **Belajar**: contoh nyata plugin OpenClaw dengan `registerTool` + manifest.
-- ⭐ Star kalau berguna, fork kalau mau modif.
-
----
-
-## ✨ Kenapa ini berguna (umum)
-
-- 🗂️ **Katalog skill tebal** — kalau lo punya puluhan skill, model gak selalu tau mana yang pas buat tugas tertentu.
-- 🎯 **Routing otomatis** — dari tugas natural language → rekomendasi skill yang di-rank by relevansi.
+- 🎯 **Auto-routing** — dari tugas natural language → rekomendasi skill yang di-rank by relevansi.
+- 🗂️ **Cocok buat katalog skill tebal** — kalau lo punya puluhan skill, model gak selalu tau mana yang pas.
 - 🔗 Tiap rekomendasi langsung kasih **link ClawHub** biar gampang dibuka/di-install.
-- ⚡ Jalan di dalam OpenClaw sebagai agent tool — model bisa panggil sendiri pas butuh.
+- ⚡ **Lokal & privat** — gak ada network call, gak ada API eksternal. Cepat & aman.
+- 🍴 **Fork-friendly** — plug-in `skills.json` lo sendiri, router langsung nyambung ke katalog lo.
 
-Cocok buat: *skill library pribadi, tim yang bagi-bagi skill, atau siapa pun yang males nyari manual di antara banyak skill.*
-
----
-
-## 📦 Instalasi
+## 📦 Installation
 
 ```bash
 # dari ClawHub (setelah publish public)
@@ -50,15 +43,13 @@ Restart gateway biar plugin ke-load:
 openclaw gateway restart
 ```
 
-Cek status:
+Verifikasi:
 
 ```bash
 openclaw plugins inspect skill-router --json
 ```
 
----
-
-## 🛠️ Cara pakai
+## 🛠️ Usage
 
 Plugin mendaftarkan satu tool: **`skill_router`**.
 
@@ -67,7 +58,7 @@ Plugin mendaftarkan satu tool: **`skill_router`**.
 | `task` | string | ✅ | Deskripsi tugas yang mau lo kerjain |
 | `limit` | number | ❌ | Berapa rekomendasi (1–10, default 3) |
 
-### Contoh pemanggilan (dari dalam chat OpenClaw)
+### Contoh
 
 > **Lo:** "Aku mau nge-scrape data dari web terus rangkum jadi PDF"
 >
@@ -76,16 +67,11 @@ Plugin mendaftarkan satu tool: **`skill_router`**.
 > ```
 > Top 3 skill(s) for: "scrape web lalu rangkum jadi PDF"
 >
-> 1. Web Scraper (web-scraper) — score 17
->    Extract structured data from any website...
+> 1. web-scraper (score 17) — extract from sites
 >    https://clawhub.ai/<owner>/web-scraper
->
-> 2. PDF Summarizer (pdf-summarizer) — score 13
->    Turn long documents into concise summaries...
+> 2. pdf-summarizer (score 13) — concise summary
 >    https://clawhub.ai/<owner>/pdf-summarizer
->
-> 3. Doc Builder (doc-builder) — score 9
->    Assemble summaries into formatted PDFs...
+> 3. doc-builder (score 9) — assemble to PDF
 >    https://clawhub.ai/<owner>/doc-builder
 >
 > Total catalog size: 42 skills.
@@ -93,52 +79,61 @@ Plugin mendaftarkan satu tool: **`skill_router`**.
 
 Gak ada match kuat? Dia arahin lo ke **orchestrator skill** (kalau ada di katalog) buat gabungin beberapa skill sekaligus.
 
----
-
-## 🧩 Gimana ini kerja (simpel)
+## 🧩 How it works
 
 1. Saat plugin load, dia baca `skills.json` — snapshot katalog skill lo (nama, slug, deskripsi).
 2. Pas `skill_router` dipanggil, dia tokenize tugas lo, score tiap skill by overlap kata kunci + phrase match di deskripsi.
 3. Return top-N ranked + link.
 
-Gak ada network call, gak ada API eksternal — **semua lokal**, cepat & privasi aman.
+Semua lokal. Gak ada network call.
 
----
-
-## 📁 Struktur repo
+## 📁 Repository structure
 
 ```
 skill-router/
-├── package.json          # metadata + peerDep openclaw
-├── openclaw.plugin.json  # manifest plugin (id, contracts, activation)
-├── skills.json           # snapshot katalog skill lo
+├── LICENSE                 # MIT
+├── CONTRIBUTING.md         # panduan kontribusi
+├── README.md               # dokumentasi ini
+├── package.json            # metadata + peerDep openclaw
+├── openclaw.plugin.json    # manifest plugin (id, contracts, activation)
+├── skills.json             # snapshot katalog skill lo
+├── assets/
+│   ├── banner.svg          # sumber banner
+│   └── banner.png          # banner (rendered)
 ├── dist/
-│   └── index.js          # entry point (registerTool: skill_router)
+│   └── index.js            # entry point (registerTool: skill_router)
 └── src/
-    └── index.ts          # source TypeScript (referensi)
+    └── index.ts            # source TypeScript (referensi)
 ```
 
----
+## 🔄 Updating the catalog
 
-## 🔄 Update katalog
+`skills.json` di-generate dari workspace lo. Lihat [`CONTRIBUTING.md`](CONTRIBUTING.md) untuk skrip generator.
 
-`skills.json` di-generate dari workspace lo. Kalau nambah skill baru, regenerate lalu commit + push + re-publish.
+## 🍴 Fork this repo
 
----
+Repo ini **publik & bebas di-fork**. Tujuannya: biar orang lain bisa lihat, fork, dan pakai router ini buat **katalog skill mereka sendiri**.
 
-## ⚠️ Catatan
+- 🔌 **Plug-and-play** — ganti `skills.json`, router langsung nyambung ke katalog kamu.
+- 🧩 **Generic** — gak ngunci ke skill tertentu; cuma mesin routing lokal.
+- 📚 **Belajar** — contoh nyata plugin OpenClaw dengan `registerTool` + manifest.
+- ⭐ Star kalau berguna, fork kalau mau modif.
+
+## ⚠️ Notes
 
 - Tool ini **optional** secara default — model cuma pakai kalau lo enable di `tools.allow`.
-- Plugin **gak lewat SkillSpector** (itu khusus skill), jadi gak kena flag keamanan kayak skill.
+- Plugin **gak lewat SkillSpector** (itu khusus skill), jadi gak kena flag keamanan.
 - Butuh OpenClaw `>=2026.3.24-beta.2`.
 - Ganti `<owner>` di contoh dengan handle ClawHub lo.
 
----
+## 📜 License
 
-## 📜 Lisensi
-
-Bebas dipakai & dimodif buat kebutuhan lo.
+[MIT](LICENSE) — bebas dipakai & dimodif.
 
 ---
 
-_Dibuat sama Clara ✨ · 2026-08-27_
+<div align="center">
+
+Made with Clara ✨ · OpenClaw plugin · generic & reusable
+
+</div>
