@@ -7,7 +7,7 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
   <a href="https://clawhub.ai"><img src="https://img.shields.io/badge/OpenClaw-plugin-6d5efc?style=for-the-badge" alt="OpenClaw plugin"></a>
-  <a href="https://github.com/pmuhammadagus-byte/openclaw-skill-router/commits/main"><img src="https://img.shields.io/badge/status-pending%20publish-orange?style=for-the-badge" alt="Status"></a>
+  <a href="https://github.com/pmuhammadagus-byte/openclaw-skill-router/commits/master"><img src="https://img.shields.io/badge/status-published-brightgreen?style=for-the-badge" alt="Status"></a>
 </p>
 
 Skill Router is an **OpenClaw plugin that routes any task to the best skill in YOUR catalog** — automatically. Give it a task description; it returns the top matching skills with reasons and ClawHub links. No more guessing which of your dozens of skills fits.
@@ -37,8 +37,8 @@ Skill Router is an **OpenClaw plugin that routes any task to the best skill in Y
 ## Installation
 
 ```bash
-# from ClawHub (after public publish)
-openclaw plugins install clawhub:<owner>/openclaw-skill-router
+# from ClawHub (published)
+openclaw plugins install clawhub:pmuhammadagus-byte/openclaw-skill-router
 
 # or from a local path
 openclaw plugins install /path/to/skill-router --force
