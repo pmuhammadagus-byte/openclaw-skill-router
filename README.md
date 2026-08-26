@@ -1,5 +1,7 @@
 # 🧭 Skill Router — Plugin OpenClaw
 
+![Skill Router banner](assets/banner.svg)
+
 > **"Lo punya 59 skill di ClawHub… tapi tiap kali ngerjain sesuatu, skill mana yang harus dipakai?"**
 
 Skill Router menjawab itu. Kasih dia deskripsi tugas, dia balikin **skill terbaik dari katalog lo** lengkap dengan alasan + link ClawHub. Gak perlu ingat nama skill satu-satu.

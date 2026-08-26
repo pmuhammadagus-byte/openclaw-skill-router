@@ -1,0 +1,85 @@
+<svg width="900" height="440" viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#161b3a"/>
+    </linearGradient>
+    <linearGradient id="router" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6d5efc"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e2548"/>
+      <stop offset="1" stop-color="#141a35"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="440" rx="18" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="40" y="50" fill="#ffffff" font-size="30" font-weight="700">🧭 Skill Router</text>
+  <text x="40" y="78" fill="#9fb0d9" font-size="15">Task → rekomendasi skill terbaik dari katalog lo</text>
+
+  <!-- Input bubble -->
+  <g filter="url(#glow)">
+    <rect x="40" y="150" width="220" height="120" rx="14" fill="#0f1530" stroke="#3a4a7a"/>
+  </g>
+  <text x="60" y="180" fill="#7dd3fc" font-size="13" font-weight="700">USER TASK</text>
+  <text x="60" y="206" fill="#e2e8f0" font-size="14">"Bikin sistem subagent</text>
+  <text x="60" y="226" fill="#e2e8f0" font-size="14">berlapis buat tim agent"</text>
+  <text x="60" y="252" fill="#94a3b8" font-size="12">input: task (string)</text>
+
+  <!-- Arrow 1 -->
+  <path d="M262 210 C 300 210, 310 210, 348 210" stroke="#6d5efc" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L7 3 L0 6 Z" fill="#6d5efc"/>
+    </marker>
+  </defs>
+
+  <!-- Router box -->
+  <g filter="url(#glow)">
+    <rect x="350" y="150" width="200" height="120" rx="16" fill="url(#router)"/>
+  </g>
+  <text x="370" y="195" fill="#0b1020" font-size="17" font-weight="800">skill_router</text>
+  <text x="370" y="222" fill="#0b1020" font-size="12" font-weight="600">tokenize → score</text>
+  <text x="370" y="242" fill="#0b1020" font-size="12" font-weight="600">→ rank top-N</text>
+  <text x="370" y="262" fill="#0b1020" font-size="11">59 skills di katalog</text>
+
+  <!-- Arrow 2 -->
+  <path d="M550 210 C 588 210, 598 210, 636 210" stroke="#22d3ee" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L7 3 L0 6 Z" fill="#22d3ee"/>
+    </marker>
+  </defs>
+
+  <!-- Output cards -->
+  <g filter="url(#glow)">
+    <rect x="640" y="110" width="230" height="64" rx="12" fill="url(#card)" stroke="#3a4a7a"/>
+  </g>
+  <text x="656" y="136" fill="#fbbf24" font-size="13" font-weight="700">1. agent-hierarchy-100</text>
+  <text x="656" y="158" fill="#cbd5e1" font-size="11">score 18 · subagent berlapis</text>
+  <text x="656" y="174" fill="#64748b" font-size="10">clawhub.ai/.../agent-hierarchy-100</text>
+
+  <g filter="url(#glow)">
+    <rect x="640" y="188" width="230" height="64" rx="12" fill="url(#card)" stroke="#3a4a7a"/>
+  </g>
+  <text x="656" y="214" fill="#34d399" font-size="13" font-weight="700">2. skill-os</text>
+  <text x="656" y="236" fill="#cbd5e1" font-size="11">score 12 · orchestrator</text>
+  <text x="656" y="252" fill="#64748b" font-size="10">clawhub.ai/.../skill-os</text>
+
+  <g filter="url(#glow)">
+    <rect x="640" y="266" width="230" height="64" rx="12" fill="url(#card)" stroke="#3a4a7a"/>
+  </g>
+  <text x="656" y="292" fill="#60a5fa" font-size="13" font-weight="700">3. subagent-driven-dev</text>
+  <text x="656" y="314" fill="#cbd5e1" font-size="11">score 9 · delegation</text>
+  <text x="656" y="330" fill="#64748b" font-size="10">clawhub.ai/.../subagent-...</text>
+
+  <!-- footer -->
+  <text x="40" y="410" fill="#64748b" font-size="11">OpenClaw plugin · pmuhammadagus-byte · lokal, tanpa network call</text>
+</svg>
