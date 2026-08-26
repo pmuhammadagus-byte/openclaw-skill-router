@@ -1,71 +1,78 @@
-<div align="center">
+<p align="center">
+  <img src="assets/banner.png" alt="Skill Router" width="860">
+</p>
 
-# 🧭 Skill Router
+<h1 align="center">Skill Router</h1>
 
-**Route any task to the best skill in YOUR catalog — automatically.**
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
+  <a href="https://clawhub.ai"><img src="https://img.shields.io/badge/OpenClaw-plugin-6d5efc?style=for-the-badge" alt="OpenClaw plugin"></a>
+  <a href="https://github.com/pmuhammadagus-byte/openclaw-skill-router/commits/main"><img src="https://img.shields.io/badge/status-pending%20publish-orange?style=for-the-badge" alt="Status"></a>
+</p>
 
-[![OpenClaw](https://img.shields.io/badge/OpenClaw-plugin-6d5efc)](https://clawhub.ai)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Status](https://img.shields.io/badge/status-pending%20publish-orange)](https://clawhub.ai)
-[![Made with Clara](https://img.shields.io/badge/made%20with-Clara-ff69b4)](https://github.com/pmuhammadagus-byte)
+Skill Router is an **OpenClaw plugin that routes any task to the best skill in YOUR catalog** — automatically. Give it a task description; it returns the top matching skills with reasons and ClawHub links. No more guessing which of your dozens of skills fits.
 
-![Skill Router banner](assets/banner.png)
+<p align="center">
+  <a href="https://clawhub.ai">ClawHub</a> ·
+  <a href="#installation">Installation</a> ·
+  <a href="#usage">Usage</a> ·
+  <a href="CONTRIBUTING.md">Contributing</a> ·
+  <a href="LICENSE">License</a>
+</p>
 
-</div>
+## What it does
 
----
+- 🎯 **Auto-routing** — natural-language task → ranked skill recommendations.
+- 🗂️ **Built for large catalogs** — when you have dozens of skills, the model doesn't always know which fits.
+- 🔗 Every recommendation ships a **ClawHub link** for one-tap open/install.
+- ⚡ **Local & private** — no network calls, no external APIs. Fast and safe.
+- 🍴 **Fork-friendly** — drop in your own `skills.json` and the router serves *your* catalog.
 
-> **"Lo punya banyak skill di ClawHub… tapi tiap kali ngerjain sesuatu, skill mana yang harus dipakai?"**
->
-> Skill Router menjawab itu. Kasih dia deskripsi tugas, dia balikin **skill terbaik dari katalog lo** lengkap dengan alasan + link ClawHub. Gak perlu ingat nama skill satu-satu.
+## How it works (high level)
 
-## ✨ Why this is useful
+- The plugin reads `skills.json` on load (a snapshot of your catalog: name, slug, description).
+- When `skill_router` is called, it tokenizes the task, scores each skill by keyword overlap + phrase match in the description, and returns the top-N ranked results with links.
+- Everything runs locally inside the OpenClaw gateway.
 
-- 🎯 **Auto-routing** — dari tugas natural language → rekomendasi skill yang di-rank by relevansi.
-- 🗂️ **Cocok buat katalog skill tebal** — kalau lo punya puluhan skill, model gak selalu tau mana yang pas.
-- 🔗 Tiap rekomendasi langsung kasih **link ClawHub** biar gampang dibuka/di-install.
-- ⚡ **Lokal & privat** — gak ada network call, gak ada API eksternal. Cepat & aman.
-- 🍴 **Fork-friendly** — plug-in `skills.json` lo sendiri, router langsung nyambung ke katalog lo.
-
-## 📦 Installation
+## Installation
 
 ```bash
-# dari ClawHub (setelah publish public)
+# from ClawHub (after public publish)
 openclaw plugins install clawhub:<owner>/openclaw-skill-router
 
-# atau dari lokal (path folder plugin)
-openclaw plugins install /path/ke/skill-router --force
+# or from a local path
+openclaw plugins install /path/to/skill-router --force
 ```
 
-Restart gateway biar plugin ke-load:
+Then restart the gateway:
 
 ```bash
 openclaw gateway restart
 ```
 
-Verifikasi:
+Verify it loaded:
 
 ```bash
 openclaw plugins inspect skill-router --json
 ```
 
-## 🛠️ Usage
+## Usage
 
-Plugin mendaftarkan satu tool: **`skill_router`**.
+The plugin registers one tool: **`skill_router`**.
 
-| Parameter | Tipe | Wajib | Keterangan |
-|-----------|------|-------|------------|
-| `task` | string | ✅ | Deskripsi tugas yang mau lo kerjain |
-| `limit` | number | ❌ | Berapa rekomendasi (1–10, default 3) |
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `task` | string | ✅ | Description of what you want to accomplish |
+| `limit` | number | ❌ | How many recommendations (1–10, default 3) |
 
-### Contoh
+### Example
 
-> **Lo:** "Aku mau nge-scrape data dari web terus rangkum jadi PDF"
+> **You:** "Scrape data from the web then summarize it into a PDF"
 >
-> **Model** (lewat `skill_router`) balikin:
+> **Model** (via `skill_router`) returns:
 >
 > ```
-> Top 3 skill(s) for: "scrape web lalu rangkum jadi PDF"
+> Top 3 skill(s) for: "scrape web then summarize into PDF"
 >
 > 1. web-scraper (score 17) — extract from sites
 >    https://clawhub.ai/<owner>/web-scraper
@@ -77,58 +84,48 @@ Plugin mendaftarkan satu tool: **`skill_router`**.
 > Total catalog size: 42 skills.
 > ```
 
-Gak ada match kuat? Dia arahin lo ke **orchestrator skill** (kalau ada di katalog) buat gabungin beberapa skill sekaligus.
+No strong match? It points you to an **orchestrator skill** (if present in your catalog) to combine several skills at once.
 
-## 🧩 How it works
+## Repo layout
 
-1. Saat plugin load, dia baca `skills.json` — snapshot katalog skill lo (nama, slug, deskripsi).
-2. Pas `skill_router` dipanggil, dia tokenize tugas lo, score tiap skill by overlap kata kunci + phrase match di deskripsi.
-3. Return top-N ranked + link.
+- `src/index.ts` — TypeScript source reference.
+- `dist/index.js` — built entry point (`registerTool: skill_router`).
+- `openclaw.plugin.json` — plugin manifest (id, contracts, activation).
+- `package.json` — metadata + `openclaw` extension config.
+- `skills.json` — your catalog snapshot consumed at runtime.
+- `assets/banner.svg` + `assets/banner.png` — README hero.
+- `CONTRIBUTING.md` — how to fork, develop, and refresh the catalog.
+- `LICENSE` — MIT.
 
-Semua lokal. Gak ada network call.
+## Local dev
 
-## 📁 Repository structure
+Prereqs: Node 22.22+/24.15+ and an OpenClaw gateway.
 
+```bash
+# clone your fork
+git clone https://github.com/<you>/openclaw-skill-router
+cd openclaw-skill-router
+
+# install into your OpenClaw (local path)
+openclaw plugins install . --force
+openclaw gateway restart
+
+# confirm it loads
+openclaw plugins inspect skill-router --json
 ```
-skill-router/
-├── LICENSE                 # MIT
-├── CONTRIBUTING.md         # panduan kontribusi
-├── README.md               # dokumentasi ini
-├── package.json            # metadata + peerDep openclaw
-├── openclaw.plugin.json    # manifest plugin (id, contracts, activation)
-├── skills.json             # snapshot katalog skill lo
-├── assets/
-│   ├── banner.svg          # sumber banner
-│   └── banner.png          # banner (rendered)
-├── dist/
-│   └── index.js            # entry point (registerTool: skill_router)
-└── src/
-    └── index.ts            # source TypeScript (referensi)
-```
 
-## 🔄 Updating the catalog
+Refresh `skills.json` for your own fork — see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-`skills.json` di-generate dari workspace lo. Lihat [`CONTRIBUTING.md`](CONTRIBUTING.md) untuk skrip generator.
+## Notes
 
-## 🍴 Fork this repo
+- The tool is **optional by default** — the model only uses it if you enable it in `tools.allow`.
+- Plugins **don't go through SkillSpector** (that's for skills), so there's no security flag.
+- Requires OpenClaw `>=2026.3.24-beta.2`.
+- Replace `<owner>` in examples with your ClawHub handle.
 
-Repo ini **publik & bebas di-fork**. Tujuannya: biar orang lain bisa lihat, fork, dan pakai router ini buat **katalog skill mereka sendiri**.
+## License
 
-- 🔌 **Plug-and-play** — ganti `skills.json`, router langsung nyambung ke katalog kamu.
-- 🧩 **Generic** — gak ngunci ke skill tertentu; cuma mesin routing lokal.
-- 📚 **Belajar** — contoh nyata plugin OpenClaw dengan `registerTool` + manifest.
-- ⭐ Star kalau berguna, fork kalau mau modif.
-
-## ⚠️ Notes
-
-- Tool ini **optional** secara default — model cuma pakai kalau lo enable di `tools.allow`.
-- Plugin **gak lewat SkillSpector** (itu khusus skill), jadi gak kena flag keamanan.
-- Butuh OpenClaw `>=2026.3.24-beta.2`.
-- Ganti `<owner>` di contoh dengan handle ClawHub lo.
-
-## 📜 License
-
-[MIT](LICENSE) — bebas dipakai & dimodif.
+[MIT](LICENSE) — free to use and modify.
 
 ---
 
