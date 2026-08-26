@@ -2,18 +2,20 @@
 
 ![Skill Router banner](assets/banner.svg)
 
-> **"Lo punya 59 skill di ClawHub… tapi tiap kali ngerjain sesuatu, skill mana yang harus dipakai?"**
+> **"Lo punya banyak skill di ClawHub… tapi tiap kali ngerjain sesuatu, skill mana yang harus dipakai?"**
 
 Skill Router menjawab itu. Kasih dia deskripsi tugas, dia balikin **skill terbaik dari katalog lo** lengkap dengan alasan + link ClawHub. Gak perlu ingat nama skill satu-satu.
 
 ---
 
-## ✨ Kenapa ini berguna
+## ✨ Kenapa ini berguna (umum)
 
-- 🗂️ Katalog lo tebal (59+ skill: `super-intelligence`, `skill-os`, `agent-hierarchy-100`, `aurum-brain`, dll). Model gak selalu tau mana yang pas.
-- 🎯 **Routing otomatis** — dari tugas natural language → rekomendasi skill ranked by relevance.
+- 🗂️ **Katalog skill tebal** — kalau lo punya puluhan skill, model gak selalu tau mana yang pas buat tugas tertentu.
+- 🎯 **Routing otomatis** — dari tugas natural language → rekomendasi skill yang di-rank by relevansi.
 - 🔗 Tiap rekomendasi langsung kasih **link ClawHub** biar gampang dibuka/di-install.
 - ⚡ Jalan di dalam OpenClaw sebagai agent tool — model bisa panggil sendiri pas butuh.
+
+Cocok buat: *skill library pribadi, tim yang bagi-bagi skill, atau siapa pun yang males nyari manual di antara banyak skill.*
 
 ---
 
@@ -21,13 +23,13 @@ Skill Router menjawab itu. Kasih dia deskripsi tugas, dia balikin **skill terbai
 
 ```bash
 # dari ClawHub (setelah publish public)
-openclaw plugins install clawhub:pmuhammadagus-byte/openclaw-skill-router
+openclaw plugins install clawhub:<owner>/openclaw-skill-router
 
 # atau dari lokal (path folder plugin)
 openclaw plugins install /path/ke/skill-router --force
 ```
 
-Lalu restart gateway biar plugin ke-load:
+Restart gateway biar plugin ke-load:
 
 ```bash
 openclaw gateway restart
@@ -52,35 +54,35 @@ Plugin mendaftarkan satu tool: **`skill_router`**.
 
 ### Contoh pemanggilan (dari dalam chat OpenClaw)
 
-> **Lo:** "Aku mau bikin sistem subagent berlapis buat manajerin tim agent"
+> **Lo:** "Aku mau nge-scrape data dari web terus rangkum jadi PDF"
 >
 > **Model** (lewat `skill_router`) balikin:
 >
 > ```
-> Top 3 skill(s) for: "buat sistem subagent berlapis"
+> Top 3 skill(s) for: "scrape web lalu rangkum jadi PDF"
 >
-> 1. Agent Hierarchy 100 (agent-hierarchy-100) — score 18
->    A system for designing and managing multi-level subagent hierarchies...
->    https://clawhub.ai/pmuhammadagus-byte/agent-hierarchy-100
+> 1. Web Scraper (web-scraper) — score 17
+>    Extract structured data from any website...
+>    https://clawhub.ai/<owner>/web-scraper
 >
-> 2. Skill OS (skill-os) — score 12
->    The master orchestrator for the OpenClaw Skill OS ecosystem...
->    https://clawhub.ai/pmuhammadagus-byte/skill-os
+> 2. PDF Summarizer (pdf-summarizer) — score 13
+>    Turn long documents into concise summaries...
+>    https://clawhub.ai/<owner>/pdf-summarizer
 >
-> 3. Subagent-Driven Development (subagent-driven-development) — score 9
->    ...
->    https://clawhub.ai/pmuhammadagus-byte/subagent-driven-development
+> 3. Doc Builder (doc-builder) — score 9
+>    Assemble summaries into formatted PDFs...
+>    https://clawhub.ai/<owner>/doc-builder
 >
-> Total catalog size: 59 skills.
+> Total catalog size: 42 skills.
 > ```
 
-Gak ada match kuat? Dia arahin lo ke **Skill OS orchestrator** buat gabungin beberapa skill sekaligus.
+Gak ada match kuat? Dia arahin lo ke **orchestrator skill** (kalau ada di katalog) buat gabungin beberapa skill sekaligus.
 
 ---
 
 ## 🧩 Gimana ini kerja (simpel)
 
-1. Saat plugin load, dia baca `skills.json` — snapshot 59 skill lo (nama, slug, deskripsi).
+1. Saat plugin load, dia baca `skills.json` — snapshot katalog skill lo (nama, slug, deskripsi).
 2. Pas `skill_router` dipanggil, dia tokenize tugas lo, score tiap skill by overlap kata kunci + phrase match di deskripsi.
 3. Return top-N ranked + link.
 
@@ -94,7 +96,7 @@ Gak ada network call, gak ada API eksternal — **semua lokal**, cepat & privasi
 skill-router/
 ├── package.json          # metadata + peerDep openclaw
 ├── openclaw.plugin.json  # manifest plugin (id, contracts, activation)
-├── skills.json           # snapshot katalog skill lo (59 item)
+├── skills.json           # snapshot katalog skill lo
 ├── dist/
 │   └── index.js          # entry point (registerTool: skill_router)
 └── src/
@@ -105,28 +107,23 @@ skill-router/
 
 ## 🔄 Update katalog
 
-`skills.json` di-generate dari workspace lo. Kalau nambah skill baru, regenerate:
-
-```bash
-node -e "/* lihat src untuk generator */"
-```
-
-Lalu commit + push, lalu re-publish ke ClawHub.
+`skills.json` di-generate dari workspace lo. Kalau nambah skill baru, regenerate lalu commit + push + re-publish.
 
 ---
 
 ## ⚠️ Catatan
 
-- Tool ini **optional** secara default — model cuma pakai kalau lo enable di `tools.allow` (atau izinin plugin-nya).
+- Tool ini **optional** secara default — model cuma pakai kalau lo enable di `tools.allow`.
 - Plugin **gak lewat SkillSpector** (itu khusus skill), jadi gak kena flag keamanan kayak skill.
 - Butuh OpenClaw `>=2026.3.24-beta.2`.
+- Ganti `<owner>` di contoh dengan handle ClawHub lo.
 
 ---
 
 ## 📜 Lisensi
 
-Milik `pmuhammadagus-byte` · bebas dipakai & dimodif buat kebutuhan lo.
+Bebas dipakai & dimodif buat kebutuhan lo.
 
 ---
 
-_Dibuat sama Clara ✨ buat Bos Agus · 2026-08-27_
+_Dibuat sama Clara ✨ · 2026-08-27_
