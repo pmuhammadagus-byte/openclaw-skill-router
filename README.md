@@ -2,9 +2,24 @@
 
 ![Skill Router banner](assets/banner.svg)
 
+[![OpenClaw](https://img.shields.io/badge/OpenClaw-plugin-6d5efc)](https://clawhub.ai)
+[![License](https://img.shields.io/badge/license-free%20to%20use-brightgreen)](LICENSE)
+[![Status](https://img.shields.io/badge/status-pending%20publish-orange)](https://clawhub.ai)
+
 > **"Lo punya banyak skill di ClawHub… tapi tiap kali ngerjain sesuatu, skill mana yang harus dipakai?"**
 
 Skill Router menjawab itu. Kasih dia deskripsi tugas, dia balikin **skill terbaik dari katalog lo** lengkap dengan alasan + link ClawHub. Gak perlu ingat nama skill satu-satu.
+
+---
+
+## 🍴 Kenapa fork repo ini?
+
+Repo ini **publik & bebas di-fork**. Justru tujuannya: biar orang lain bisa lihat, fork, dan pakai router ini buat **katalog skill mereka sendiri**.
+
+- 🔌 **Plug-and-play**: ganti `skills.json` dengan daftar skill kamu → router langsung nyambung ke katalog kamu.
+- 🧩 **Generic**: gak ngunci ke skill tertentu; ini cuma mesin routing lokal.
+- 📚 **Belajar**: contoh nyata plugin OpenClaw dengan `registerTool` + manifest.
+- ⭐ Star kalau berguna, fork kalau mau modif.
 
 ---
 
