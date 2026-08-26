@@ -1,6 +1,6 @@
 {
   "name": "@pmuhammadagus-byte/openclaw-skill-router",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "Routes a task description to the best skill from the pmuhammadagus-byte skill catalog.",
   "dependencies": {},
@@ -8,7 +8,9 @@
     "openclaw": ">=2026.3.24-beta.2"
   },
   "openclaw": {
-    "extensions": ["./dist/index.js"],
+    "extensions": [
+      "./dist/index.js"
+    ],
     "compat": {
       "pluginApi": ">=2026.3.24-beta.2",
       "minGatewayVersion": "2026.3.24-beta.2"
