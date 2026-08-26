@@ -1,96 +1,63 @@
-<svg width="900" height="520" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="'DejaVu Sans','Segoe UI',sans-serif">
+<svg width="860" height="320" viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" font-family="'DejaVu Sans','Segoe UI',sans-serif">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0a0e27"/>
-      <stop offset="0.55" stop-color="#131a40"/>
-      <stop offset="1" stop-color="#1d1140"/>
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#1a1340"/>
     </linearGradient>
-    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#8b5cff"/>
-      <stop offset="0.55" stop-color="#6d5efc"/>
       <stop offset="1" stop-color="#19e3ff"/>
     </linearGradient>
-    <linearGradient id="router" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#7c5cff"/>
       <stop offset="1" stop-color="#19e3ff"/>
     </linearGradient>
-    <linearGradient id="c1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb020" stop-opacity="0.22"/><stop offset="1" stop-color="#1e2548"/></linearGradient>
-    <linearGradient id="c2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34d399" stop-opacity="0.22"/><stop offset="1" stop-color="#1e2548"/></linearGradient>
-    <linearGradient id="c3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#60a5fa" stop-opacity="0.22"/><stop offset="1" stop-color="#1e2548"/></linearGradient>
     <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feGaussianBlur stdDeviation="6" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.1" fill="#3a4a7a" opacity="0.35"/>
-    </pattern>
-    <marker id="ar" markerWidth="11" markerHeight="11" refX="7" refY="3.2" orient="auto"><path d="M0 0 L7 3.2 L0 6.4 Z" fill="#6d5efc"/></marker>
-    <marker id="ar2" markerWidth="11" markerHeight="11" refX="7" refY="3.2" orient="auto"><path d="M0 0 L7 3.2 L0 6.4 Z" fill="#19e3ff"/></marker>
   </defs>
 
-  <rect width="900" height="520" rx="20" fill="url(#bg)"/>
-  <rect width="900" height="520" rx="20" fill="url(#dots)"/>
+  <rect width="860" height="320" rx="22" fill="url(#bg)"/>
 
-  <!-- Hero bar -->
-  <g filter="url(#glow)"><rect x="0" y="0" width="900" height="96" fill="url(#hero)"/></g>
-  <text x="34" y="46" fill="#0a0e27" font-size="30" font-weight="bold">🧭 Skill Router</text>
-  <text x="34" y="74" fill="#0a0e27" font-size="14" font-weight="bold">OpenClaw plugin · task → best skill, automatically</text>
-  <g filter="url(#glow)"><rect x="582" y="24" width="288" height="48" rx="24" fill="#0a0e27"/></g>
-  <text x="600" y="53" fill="#19e3ff" font-size="13" font-weight="bold">$ openclaw plugins install</text>
-
-  <!-- Feature chips -->
-  <g>
-    <rect x="34" y="116" width="156" height="38" rx="19" fill="#1e2548" stroke="#3a4a7a"/>
-    <text x="54" y="140" fill="#cbd5e1" font-size="13" font-weight="bold">🎯 Auto-routing</text>
-    <rect x="204" y="116" width="170" height="38" rx="19" fill="#1e2548" stroke="#3a4a7a"/>
-    <text x="224" y="140" fill="#cbd5e1" font-size="13" font-weight="bold">⚡ Local, no API</text>
-    <rect x="388" y="116" width="182" height="38" rx="19" fill="#1e2548" stroke="#3a4a7a"/>
-    <text x="408" y="140" fill="#cbd5e1" font-size="13" font-weight="bold">🔗 ClawHub links</text>
-    <rect x="584" y="116" width="172" height="38" rx="19" fill="#1e2548" stroke="#3a4a7a"/>
-    <text x="604" y="140" fill="#cbd5e1" font-size="13" font-weight="bold">🍴 Fork-friendly</text>
+  <!-- Brand mark: compass/router dial -->
+  <g filter="url(#glow)">
+    <circle cx="118" cy="118" r="58" fill="url(#mark)"/>
+  </g>
+  <circle cx="118" cy="118" r="58" fill="none" stroke="#0b1020" stroke-width="6"/>
+  <!-- needle -->
+  <path d="M118 78 L133 130 L118 118 L103 130 Z" fill="#0b1020"/>
+  <circle cx="118" cy="118" r="9" fill="#0b1020"/>
+  <!-- ticks -->
+  <g stroke="#cfd8ff" stroke-width="3" opacity="0.7">
+    <line x1="118" y1="62" x2="118" y2="74"/>
+    <line x1="118" y1="162" x2="118" y2="174"/>
+    <line x1="62" y1="118" x2="74" y2="118"/>
+    <line x1="162" y1="118" x2="174" y2="118"/>
   </g>
 
-  <text x="34" y="196" fill="#ffffff" font-size="17" font-weight="bold">How it works</text>
+  <!-- Title + tagline -->
+  <text x="210" y="96" fill="#ffffff" font-size="46" font-weight="bold">Skill Router</text>
+  <text x="212" y="138" fill="#9fb0d9" font-size="19">Route any task to the best skill in YOUR catalog — automatically.</text>
+  <rect x="210" y="160" width="470" height="3" rx="1.5" fill="url(#brand)"/>
 
-  <!-- Input -->
-  <g filter="url(#glow)"><rect x="34" y="212" width="212" height="120" rx="14" fill="#0f1530" stroke="#3a4a7a"/></g>
-  <text x="54" y="240" fill="#7dd3fc" font-size="13" font-weight="bold">USER TASK</text>
-  <text x="54" y="266" fill="#e2e8f0" font-size="13">"Scrape data dari web</text>
-  <text x="54" y="286" fill="#e2e8f0" font-size="13">lalu rangkum jadi PDF"</text>
-  <text x="54" y="312" fill="#94a3b8" font-size="12">input: task (string)</text>
+  <!-- Feature pills -->
+  <g>
+    <rect x="210" y="186" width="126" height="40" rx="20" fill="#1e2548" stroke="#3a4a7a"/>
+    <text x="228" y="211" fill="#cbd5e1" font-size="15" font-weight="bold">🎯 Auto-routing</text>
+    <rect x="348" y="186" width="118" height="40" rx="20" fill="#1e2548" stroke="#3a4a7a"/>
+    <text x="366" y="211" fill="#cbd5e1" font-size="15" font-weight="bold">⚡ Local</text>
+    <rect x="478" y="186" width="132" height="40" rx="20" fill="#1e2548" stroke="#3a4a7a"/>
+    <text x="496" y="211" fill="#cbd5e1" font-size="15" font-weight="bold">🔗 ClawHub</text>
+    <rect x="622" y="186" width="124" height="40" rx="20" fill="#1e2548" stroke="#3a4a7a"/>
+    <text x="640" y="211" fill="#cbd5e1" font-size="15" font-weight="bold">🍴 Forkable</text>
+  </g>
 
-  <path d="M246 272 C 286 272, 296 272, 336 272" stroke="#6d5efc" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+  <!-- Install hint -->
+  <text x="212" y="262" fill="#64748b" font-size="14">Install:</text>
+  <rect x="282" y="244" width="430" height="34" rx="10" fill="#0b1020" stroke="#2a335c"/>
+  <text x="298" y="266" fill="#19e3ff" font-size="14" font-weight="bold" font-family="monospace">openclaw plugins install clawhub:&lt;owner&gt;/openclaw-skill-router</text>
 
-  <!-- Router node -->
-  <g filter="url(#glow)"><rect x="338" y="212" width="200" height="120" rx="16" fill="url(#router)"/></g>
-  <text x="358" y="256" fill="#0a0e27" font-size="16" font-weight="bold">⚙ skill_router</text>
-  <text x="358" y="282" fill="#0a0e27" font-size="12" font-weight="bold">tokenize → score</text>
-  <text x="358" y="302" fill="#0a0e27" font-size="12" font-weight="bold">→ rank top-N</text>
-  <text x="358" y="322" fill="#0a0e27" font-size="11">reads your skills.json</text>
-
-  <path d="M538 272 C 578 272, 588 272, 628 272" stroke="#19e3ff" stroke-width="3" fill="none" marker-end="url(#ar2)"/>
-
-  <!-- Output cards -->
-  <g filter="url(#glow)"><rect x="630" y="204" width="236" height="58" rx="12" fill="url(#c1)" stroke="#3a4a7a"/></g>
-  <rect x="630" y="204" width="6" height="58" rx="3" fill="#ffb020"/>
-  <text x="648" y="230" fill="#ffb020" font-size="13" font-weight="bold">1. web-scraper</text>
-  <text x="648" y="250" fill="#cbd5e1" font-size="11">score 17 · extract from sites</text>
-
-  <g filter="url(#glow)"><rect x="630" y="270" width="236" height="58" rx="12" fill="url(#c2)" stroke="#3a4a7a"/></g>
-  <rect x="630" y="270" width="6" height="58" rx="3" fill="#34d399"/>
-  <text x="648" y="296" fill="#34d399" font-size="13" font-weight="bold">2. pdf-summarizer</text>
-  <text x="648" y="316" fill="#cbd5e1" font-size="11">score 13 · concise summary</text>
-
-  <g filter="url(#glow)"><rect x="630" y="336" width="236" height="58" rx="12" fill="url(#c3)" stroke="#3a4a7a"/></g>
-  <rect x="630" y="336" width="6" height="58" rx="3" fill="#60a5fa"/>
-  <text x="648" y="362" fill="#60a5fa" font-size="13" font-weight="bold">3. doc-builder</text>
-  <text x="648" y="382" fill="#cbd5e1" font-size="11">score 9 · assemble to PDF</text>
-
-  <!-- Divider -->
-  <line x1="34" y1="408" x2="866" y2="408" stroke="#2a335c" stroke-width="1"/>
-
-  <!-- CTA footer -->
-  <text x="34" y="440" fill="#e2e8f0" font-size="15" font-weight="bold">Perfect for: large skill libraries, teams sharing skills, or anyone tired of searching manually.</text>
-  <text x="34" y="466" fill="#9fb0d9" font-size="12">Plug in your own skills.json → the router serves YOUR catalog. Star it, fork it, make it yours.</text>
-  <text x="34" y="490" fill="#6d5efc" font-size="13" font-weight="bold">✦ Made with Clara · openclaw plugin · generic &amp; reusable</text>
+  <!-- Footer -->
+  <text x="212" y="300" fill="#6d5efc" font-size="14" font-weight="bold">✦ Made with Clara · OpenClaw plugin · generic &amp; reusable</text>
 </svg>
