@@ -1,0 +1,25 @@
+{
+  "id": "skill-router",
+  "name": "Skill Router",
+  "description": "Given a task description, recommends the best matching skill from the pmuhammadagus-byte skill catalog and explains why.",
+  "contracts": {
+    "tools": [
+      "skill_router"
+    ]
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "catalogOwner": {
+        "type": "string",
+        "description": "ClawHub owner handle whose skills are searchable via the router.",
+        "default": "pmuhammadagus-byte"
+      }
+    }
+  },
+  "version": "1.0.3"
+}
