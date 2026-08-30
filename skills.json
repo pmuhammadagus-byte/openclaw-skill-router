@@ -1,0 +1,356 @@
+[
+ {
+  "folder": "agent-hierarchy-100",
+  "name": "agent-hierarchy-100",
+  "slug": "agent-hierarchy-100",
+  "description": "A system for designing and managing multi-level subagent hierarchies in OpenClaw. Provides explicit upgrade paths, quality gates, and capability unlocks across escalating agent levels. Use this skill only when the user explicitly asks to bu"
+ },
+ {
+  "folder": "agent-observability-trace-engine",
+  "name": "agent-observability-trace-engine",
+  "slug": "agent-observability-trace-engine",
+  "description": "Mesin observabilitas dan tracing untuk ekosistem OpenClaw: logging, tracing, metrics, deteksi anomali, root-cause analysis, dan recovery—tanpa membocorkan credential atau data pribadi."
+ },
+ {
+  "folder": "android-network-audit",
+  "name": "android-network-audit",
+  "slug": "android-network-audit",
+  "description": "Use when auditing Android/Termux network exposure, connectivity, proxies, listeners, and unsafe ports from the device."
+ },
+ {
+  "folder": "aurum-brain",
+  "name": "aurum-brain",
+  "slug": "aurum-brain",
+  "description": "Gunakan saat user meminta reasoning mendalam bertahap, self-correction, atau output anti-repetitif terverifikasi pada tugas nyata."
+ },
+ {
+  "folder": "brain-core-skill",
+  "name": "brain-core-skill",
+  "slug": "brain-core-skill",
+  "description": "Gunakan saat user minta reasoning/analisis mendalam atau ide kreatif lewat framework kognitif. Bukan mengganti identitas agent."
+ },
+ {
+  "folder": "brainstorming",
+  "name": "brainstorming",
+  "slug": "brainstorming",
+  "description": "Gunakan saat user mau mengubah ide jadi desain & spesifikasi lewat dialog kolaboratif bertahap."
+ },
+ {
+  "folder": "coding",
+  "name": "Coding",
+  "slug": "coding",
+  "description": "Coding style memory that adapts to your preferences, conventions, and patterns for consistent coding."
+ },
+ {
+  "folder": "dispatching-parallel-agents",
+  "name": "dispatching-parallel-agents",
+  "slug": "dispatching-parallel-agents",
+  "description": "Gunakan saat ada banyak kegagalan/bug/tes yang independen (file berbeda, subsistem berbeda, tidak ada shared state) dan bisa diselidiki bersamaan. Aktif saat user minta 'dispatch agent paralel', 'kerjakan investigasi ini bersamaan', atau ad"
+ },
+ {
+  "folder": "dynamic-dashboard-builder",
+  "name": "dynamic-dashboard-builder",
+  "slug": "dynamic-dashboard-builder",
+  "description": "Gunakan saat user ingin membuat dashboard HTML dinamis dari tabel database yang sudah ada dengan refresh data berkala. Aktif saat user minta 'bikin dashboard dari tabel ini', 'dashboard dengan polling', atau 'tampilkan data DB jadi chart li"
+ },
+ {
+  "folder": "elite-writing-id",
+  "name": "elite-writing-id",
+  "slug": "elite-writing-id",
+  "description": "Gunakan saat user meminta penulisan atau perbaikan teks berbahasa Indonesia — caption/status (WhatsApp, Telegram, Instagram), postingan/thread, artikel/blog, email (cold/newsletter/balasan), sales page/landing page, iklan, dokumentasi tekni"
+ },
+ {
+  "folder": "elite-writing-skill",
+  "name": "elite-writing-skill",
+  "slug": "elite-writing-skill",
+  "description": "Gunakan saat user meminta bantuan menulis (email, artikel, script, iklan, dokumentasi, fiksi, social media, landing page, proposal). Menyediakan framework penulisan dari copywriter/novelis pro untuk meningkatkan kualitas tulisan. Aktif saat"
+ },
+ {
+  "folder": "executing-plans",
+  "name": "executing-plans",
+  "slug": "executing-plans",
+  "description": "Gunakan saat ada rencana implementasi tertulis (dari writing-plans) dan harus dieksekusi langkah demi langkah di sesi saat ini—tanpa subagent. Aktif saat user bilang 'jalankan plan ini', 'eksekusi todos', atau 'implementasikan sesuai plan'."
+ },
+ {
+  "folder": "finishing-a-development-branch",
+  "name": "finishing-a-development-branch",
+  "slug": "finishing-a-development-branch",
+  "description": "Gunakan saat implementasi sudah selesai dan semua tes hijau, lalu perlu memutuskan cara mengintegrasikan branch (merge lokal / PR / simpan). Aktif saat user bilang 'selesaikan branch ini', 'tes lulus, mau merge?', atau 'buat PR dari branch "
+ },
+ {
+  "folder": "gitcrawl",
+  "name": "gitcrawl",
+  "slug": "gitcrawl",
+  "description": "GitHub archive: issue/PR search, sync freshness, duplicate clusters, gh-shim PR status, and Gitcrawl repo work."
+ },
+ {
+  "folder": "graincrawl",
+  "name": "graincrawl",
+  "slug": "graincrawl",
+  "description": "Granola archive: search, sync freshness, notes, transcripts, panels, SQL counts, and Graincrawl repo work."
+ },
+ {
+  "folder": "iq-core",
+  "name": "iq-core",
+  "slug": "iq-core",
+  "description": "Use when activating high-level reasoning: deep understanding, problem decomposition, multi-path reasoning, first principles, evidence ranking, contradiction checking, adversarial thinking, self-critique, anti-hallucination."
+ },
+ {
+  "folder": "openclaw-agent-cognitive-os",
+  "name": "openclaw-agent-cognitive-os",
+  "slug": "agent-cognitive-os",
+  "description": "Gunakan skill ini saat: task membutuhkan kontrol agen tingkat tinggi, bukan sekadar jawaban cepat;; perlu memecah tujuan menjadi state, rencana, milestone, dan verifikasi;; perlu mengoordinasikan reasoning, memory, tools, dan plugin;. Aktif"
+ },
+ {
+  "folder": "openclaw-agent-evaluation-benchmark-engine",
+  "name": "openclaw-agent-evaluation-benchmark-engine",
+  "slug": "agent-evaluation-benchmark-engine",
+  "description": "Gunakan saat mengukur kualitas agen OpenClaw secara objektif melalui baseline benchmark, deteksi regresi, golden test suite, penilaian skor, perbandingan model, evaluasi keamanan, dan gatekeeper penerimaan upgrade sebelum menerima perubahan"
+ },
+ {
+  "folder": "openclaw-agent-runner-site",
+  "name": "openclaw-agent-runner-site",
+  "slug": "agent-runner-site",
+  "description": "Gunakan saat user ingin membuat halaman web (single HTML / static site minimalis) untuk menjalankan agent OpenClaw: form API key + base URL + model, jalankan agent, streaming output, tanpa install. Aktif saat user minta 'agent runner', 'web"
+ },
+ {
+  "folder": "openclaw-agent-skill-evolution",
+  "name": "openclaw-agent-skill-evolution",
+  "slug": "agent-skill-evolution",
+  "description": "Gunakan saat user secara eksplisit meminta evolusi skill lewat benchmark, red-teaming, dan regresi pada task tertentu."
+ },
+ {
+  "folder": "openclaw-android-control",
+  "name": "openclaw-android-control",
+  "slug": "android-control",
+  "description": "Android/Termux-aware control layer for OpenClaw: ADB, wireless debugging, intents, UI automation, app launching, and verified on-device execution that adapts to the real device environment."
+ },
+ {
+  "folder": "openclaw-auto-skill-orchestrator",
+  "name": "skill-workflow-planner",
+  "slug": "auto-skill-orchestrator",
+  "description": "Gunakan saat user secara eksplisit meminta bantuan menyusun rencana urutan pengerjaan beberapa skill OpenClaw (mis. 'bantu susun alur skill A lalu B')."
+ },
+ {
+  "folder": "openclaw-backup-validator",
+  "name": "openclaw-backup-validator",
+  "slug": "backup-validator",
+  "description": "Gunakan skill ini saat: akan menjalankan backup sebelum push ke GitHub;; baru menambahkan/mengubah skill di workspace;; ingin memastikan tidak ada secret bocor;. Aktif untuk tugas terkait openclaw-backup-validator."
+ },
+ {
+  "folder": "openclaw-brain-core-ultra",
+  "name": "openclaw-brain-core-ultra",
+  "slug": "brain-core-ultra",
+  "description": "Gunakan saat user minta reasoning mendalam sebelum bertindak pada task kompleks berdependensi banyak."
+ },
+ {
+  "folder": "openclaw-islamic-guidance-taqwa-companion",
+  "name": "openclaw-islamic-guidance-taqwa-companion",
+  "slug": "islamic-guidance-taqwa-companion",
+  "description": "Pendamping spiritual Islam (taqwa companion) yang lembut dan berdalil: iman, ibadah, dzikir, akhlak, muhasabah, dengan penghormatan terhadap perbedaan ulama dan tanpa mengarang dal/ dalil. Bukan pengganti ulama, ustaz, atau konseling profes"
+ },
+ {
+  "folder": "openclaw-islamic-knowledge-mastery",
+  "name": "openclaw-islamic-knowledge-mastery",
+  "slug": "islamic-knowledge-mastery",
+  "description": "Engine penguasaan pengetahuan Islam (Quran, hadith, tafsir, fiqh, aqidah, sejarah) dengan retrieval, verifikasi, cross-reference, dan pengajaran terstruktur — jawaban selalu bersumber & akurat, tanpa fabrikasi."
+ },
+ {
+  "folder": "openclaw-plugin-intelligence",
+  "name": "openclaw-plugin-intelligence",
+  "slug": "plugin-intelligence",
+  "description": "Engine kecerdasan plugin OpenClaw: discovery berbasis kapabilitas, evaluasi & seleksi plugin, orkestrasi multi-plugin, resolusi konflik dependensi, connection/permission check, validasi hasil, dan recovery rollback-safe untuk ekosistem plug"
+ },
+ {
+  "folder": "openclaw-professional-web-engineering",
+  "name": "openclaw-professional-web-engineering",
+  "slug": "professional-web-engineering",
+  "description": "Gunakan skill ini saat: membuat website, web app, PWA, mobile app, API, backend, dashboard, SaaS, landing page, e-; membutuhkan alur engineering lengkap dari requirement hingga delivery;; ingin output profesional: modern, secure, performant"
+ },
+ {
+  "folder": "openclaw-science-technology-research-intelligence",
+  "name": "openclaw-science-technology-research-intelligence",
+  "slug": "science-technology-research-intelligence",
+  "description": "Gunakan skill ini saat: menjawab pertanyaan riset atau teknis tingkat lanjut di bidang sains/teknologi;; menganalisis paper, laporan, atau dokumentasi teknis;; mendesain eksperimen, model, sistem, atau evaluasi bukti;. Aktif untuk tugas ter"
+ },
+ {
+  "folder": "openclaw-skill-auto-update-discovery",
+  "name": "openclaw-skill-auto-update-discovery",
+  "slug": "skill-auto-update-discovery",
+  "description": "Engine auto-update & discovery skill OpenClaw: scan, evaluate, update, test, install, verify, rollback — dengan validation gate dan safety agar update tidak merusak workspace."
+ },
+ {
+  "folder": "openclaw-skill-generator",
+  "name": "openclaw-skill-generator",
+  "slug": "skill-generator",
+  "description": "Gunakan skill ini saat: user memberikan ide, catatan, atau workflow yang belum terstruktur dan meminta dibuat jadi; user ingin membuat skill OpenClaw baru dari bahan mentah;; user memiliki masalah/cara kerja yang berulang dan ingin dijadika"
+ },
+ {
+  "folder": "openclaw-skill-os",
+  "name": "openclaw-skill-os",
+  "slug": "openclaw-skill-os",
+  "description": "The master orchestrator for the OpenClaw Skill OS ecosystem. Coordinates multiple skills, manages skill interactions, and routes tasks to optimal skill combinations when the user explicitly asks to orchestrate or combine skills. Use this sk"
+ },
+ {
+  "folder": "openclaw-skill-packager",
+  "name": "openclaw-skill-packager",
+  "slug": "skill-packager",
+  "description": "Gunakan saat memaketkan, memvalidasi, dan menyiapkan skill OpenClaw untuk backup, deploy, atau reuse lintas environment. Menjamin struktur valid, bebas secret, dan kompatibel platform (Termux/Android vs desktop)."
+ },
+ {
+  "folder": "openclaw-token-connection-guard",
+  "name": "openclaw-token-connection-guard",
+  "slug": "token-connection-guard",
+  "description": "Gunakan skill ini saat: perlu menghemat token, context, request, waktu, dan retry tanpa menurunkan kualitas;; perlu memilih model/tool/skill yang paling hemat untuk task tertentu;; perlu menangani timeout, rate limit, provider error, jaring"
+ },
+ {
+  "folder": "openclaw-universal-service-access",
+  "name": "universal-service-access",
+  "slug": "universal-service-access",
+  "description": "Kelola kredensial & akses ke layanan eksternal (Vercel, Supabase, GitHub, dll) dengan prinsip minimum-privilege: redact secret, verifikasi koneksi, guard operasi destruktif. Aktif hanya saat user eksplisit meminta setup/rotate/verifikasi kr"
+ },
+ {
+  "folder": "openclaw-user-intent-refinement",
+  "name": "openclaw-user-intent-refinement",
+  "slug": "user-intent-refinement",
+  "description": "Skill profesional untuk merekonstruksi, mengoreksi, dan meningkatkan perintah user yang ambigu, salah, tidak lengkap, atau tidak sadar-environment menjadi intent yang valid, faktual, dan dapat dieksekusi-verifikasi sebelum menjalankan aksi."
+ },
+ {
+  "folder": "quality-assurance",
+  "name": "quality-assurance",
+  "slug": "quality-assurance",
+  "description": "The ultimate validation and testing skill for OpenClaw. Automatically audits, stress-tests, and certifies any skill against the 10-dimension quality framework. Use this skill before shipping any skill, after upgrading any skill, or when you"
+ },
+ {
+  "folder": "receiving-code-review",
+  "name": "receiving-code-review",
+  "slug": "receiving-code-review",
+  "description": "Gunakan skill ini saat: code-review\" [shape=box];; > \"Before implementing?\" [label=\"yes\"];; > \"Skip review\" [label=\"no\"];. Aktif untuk tugas terkait receiving-code-review."
+ },
+ {
+  "folder": "requesting-code-review",
+  "name": "requesting-code-review",
+  "slug": "requesting-code-review",
+  "description": "Gunakan skill ini saat: > \"Major feature?\" [label=\"yes\"];; > \"Skip review\" [label=\"no - minor\"];; > \"Request review\" [label=\"yes\"];. Aktif untuk tugas terkait requesting-code-review."
+ },
+ {
+  "folder": "sandbox-blast-radius-control-engine",
+  "name": "Sandbox & Blast-Radius Control Engine X∞",
+  "slug": "sandbox-blast-radius-control-engine",
+  "description": ">-"
+ },
+ {
+  "folder": "skill-architecture-standard",
+  "name": "skill-architecture-standard",
+  "slug": "skill-architecture-standard",
+  "description": "Gunakan sebagai referensi saat user membuat, mereview, atau upgrade skill OpenClaw."
+ },
+ {
+  "folder": "skill-curator",
+  "name": "skill-curator",
+  "slug": "skill-curator",
+  "description": "Gunakan saat user ingin audit atau mengkurasi skill OpenClaw — deteksi bahasa god-mode (PRIME DIRECTIVE/overrides all), cek keberadaan _meta.json/CHANGELOG/GUARDRAILS, temukan kebocoran token/secret (dengan allowlist token legitimate), atau"
+ },
+ {
+  "folder": "skill-factory",
+  "name": "skill-factory",
+  "slug": "skill-factory",
+  "description": "The ultimate meta-skill for creating new OpenClaw skills from scratch. This skill transforms any agent into a world-class skill architect capable of designing, building, and shipping legendary-tier skills. Use this skill whenever you need t"
+ },
+ {
+  "folder": "skill-upgrader",
+  "name": "skill-upgrader",
+  "slug": "skill-upgrader",
+  "description": "The ultimate meta-skill for OpenClaw. Automatically analyzes, diagnoses, and upgrades ANY existing skill to elite/legendary tier. Use this skill when you need to enhance, refactor, or evolve any skill — whether it's writing, coding, researc"
+ },
+ {
+  "folder": "skill-validation",
+  "name": "skill-validation",
+  "slug": "skill-validation",
+  "description": "Gunakan skill ini saat: validation\" [shape=box];; > \"skill-validation\" [label=\"yes\"];; > \"Editing existing skill?\" [label=\"no\"];. Aktif untuk tugas terkait skill-validation.\"v2.0.0: Align with current ClawHub spec — trigger-style descriptio"
+ },
+ {
+  "folder": "subagent-driven-development",
+  "name": "subagent-driven-development",
+  "slug": "subagent-driven-development",
+  "description": "Gunakan saat ada rencana implementasi dengan tugas yang sebagian besar independen dan ingin dieksekusi via subagent paralel di sesi yang sama (bukan context switch). Aktif saat user minta \"jalankan plan pakai subagent\", \"dispatch implemente"
+ },
+ {
+  "folder": "super-intelligence-skill",
+  "name": "super-intelligence-skill",
+  "slug": "super-intelligence-skill",
+  "description": "Gunakan saat user menghadapi task yang butuh reasoning dalam, analisis kompleks, problem-solving kreatif, sintesis long-context, atau planning multi-step. Menyediakan framework kognitif + self-correction loop untuk meningkatkan kualitas out"
+ },
+ {
+  "folder": "systematic-debugging",
+  "name": "systematic-debugging",
+  "slug": "systematic-debugging",
+  "description": "Gunakan saat ada bug/error: test failure, behavior tak terduga, masalah performa, atau build broken."
+ },
+ {
+  "folder": "termux-compat-runner",
+  "name": "termux-compat-runner",
+  "slug": "termux-compat-runner",
+  "description": "Use when executing shell commands on Termux/Android: validate platform, choose safe commands, apply timeout/retry, and avoid Linux desktop assumptions."
+ },
+ {
+  "folder": "test-driven-development",
+  "name": "test-driven-development",
+  "slug": "test-driven-development",
+  "description": "Gunakan saat membuat fitur baru, bug fix, refactoring, atau perubahan behavior—dengan menulis test dulu, lihat gagal, lalu tulis kode minimal untuk lewat. Aktif saat user minta \"pakai TDD\", \"test-first\", atau \"red-green-refactor\"."
+ },
+ {
+  "folder": "trading-analyst",
+  "name": "trading-analyst",
+  "slug": "trading-analyst",
+  "description": "changelog: \"v1.3.0: Fix version drift, trigger-rich description, declare env/bin requirements. v1.2.0: ClawHub metadata, validation gates, skill-card"
+ },
+ {
+  "folder": "using-git-worktrees",
+  "name": "using-git-worktrees",
+  "slug": "using-git-worktrees",
+  "description": "Gunakan saat user minta isolasi kerja git ke worktree terpisah agar tidak mengganggu working tree utama."
+ },
+ {
+  "folder": "using-superpowers",
+  "name": "using-superpowers",
+  "slug": "using-superpowers",
+  "description": "Gunakan saat user minta pakai fitur lanjutan agent (tool/skill/integrasi) secara aman & terukur pada task tertentu."
+ },
+ {
+  "folder": "verification-before-completion",
+  "name": "verification-before-completion",
+  "slug": "verification-before-completion",
+  "description": "Gunakan saat user minta verifikasi pekerjaan (code/build/deploy) benar-benar selesai sebelum klaim sukses."
+ },
+ {
+  "folder": "web-search-9routers-backup",
+  "name": "web-search-9routers-backup",
+  "slug": "web-search-9routers-backup",
+  "description": "Gunakan saat user ingin mengambil/membaca URL tapi skill `9router-web-search` utama gagal, atau butuh fallback web fetch via layanan internal 9Router di `localhost:20128`. Aktif saat user minta \"fetch URL pakai backup\" atau primary web sear"
+ },
+ {
+  "folder": "web-to-apk-research",
+  "name": "web-to-apk-research",
+  "slug": "web-to-apk-research",
+  "description": "Gunakan saat membutuhuhkan kemampuan terkait web-to-apk-research (lihat When to Use di bawah).\"v2.0.0: Rewrite from research note into actionable skill — decision matrix, executable PWA/Capacitor workflows, reference split. v1.0.0: Initial "
+ },
+ {
+  "folder": "writing-plans",
+  "name": "writing-plans",
+  "slug": "writing-plans",
+  "description": "Gunakan skill ini saat: step task?\" [shape=diamond];; plans\" [shape=box];; > \"Multi-step task?\" [label=\"yes\"];. Aktif untuk tugas terkait writing-plans."
+ },
+ {
+  "folder": "writing-skills",
+  "name": "writing-skills",
+  "slug": "writing-skills",
+  "description": "Gunakan saat ingin membuat/memperbaiki skill (process documentation) dengan pendekatan Test-Driven Development: tulis skenario pressure, lihat agen gagal tanpa skill, tulis skill, verifikasi agen patuh. Aktif saat user minta \"buat skill\", \""
+ },
+ {
+  "folder": "xau-usd-trading-intelligence",
+  "name": "xau-usd-trading-intelligence",
+  "slug": "xau-usd-trading-intelligence",
+  "description": "Gunakan untuk menganalisis XAU/USD dengan regime pasar berbasis data, struktur multi-timeframe, likuiditas, momentum, volatilitas, konteks makro, manajemen risiko, jurnal trading, dan pembelajaran berkelanjutan."
+ }
+]
