@@ -3,7 +3,9 @@
   "name": "Skill Router",
   "description": "Given a task description, recommends the best matching skill from the pmuhammadagus-byte skill catalog and explains why.",
   "contracts": {
-    "tools": ["skill_router"]
+    "tools": [
+      "skill_router"
+    ]
   },
   "activation": {
     "onStartup": true
@@ -18,5 +20,6 @@
         "default": "pmuhammadagus-byte"
       }
     }
-  }
+  },
+  "version": "1.0.1"
 }
